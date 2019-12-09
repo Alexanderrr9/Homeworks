@@ -1,12 +1,12 @@
 // Задание 1:
 
-/^[a-z]{3,10}_[a-z]{3,10}(-[\d]{4})?@[a-z\d]{1,10}(\.|-)?[a-z\d]{1,10}.com$/ig.test('name_surname-1234@gmail.com');
+/^[a-z]{3,10}_[a-z]{3,10}(-[\d]{4})?@[a-z\d]{1,10}(\.|-)?[a-z\d]{1,10}.com$/i.test('name_surname-1234@gmail.com');
 
 
 // Задание 2:
 
 function testRhoneNumber(string){
-    return (/^\+?375-?|8-?0(25|29|33|44|17)-?[1-9]{3}(-?\d{2}){2}$/.test(string)) || false;
+    return (/^(\+?375-?|8-?0)(25|29|33|44|17)-?[1-9]{3}(-?\d{2}){2}$/.test(string)) || false;
 
 }
 
