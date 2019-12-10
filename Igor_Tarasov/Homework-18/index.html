@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="main">
+    <div class="controlButton">
+        <button class="button" onclick="startMSMS()" data-state = "start" id = "startBtn">Запустить</button>
+    </div>
+    <div class="timer">
+        <div id="mm">00</div>
+        <div id="ss">00</div>
+        <div id="msms">00</div>
+
+    </div>
+    <div class="optionButton" id ="optionBtn" hidden ="true">
+    <button class="button" onclick="saveTimer()">Сохранить отметку</button>
+    <button class="button" onclick="clearTime()">Сбросить</button>
+    </div>
+    <div class="savedTimer" id="savedTimer">
+
+    </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+div {
+    margin: 20px 0px;
+    font-size: 20px;
+}
+.main {
+    display: block;
+    margin: auto;
+    width: 500px;
+    text-align: center;
+}
+
+button {
+    font-size: 25px;
+    width: 240px;
+}
+
+.timer {
+    font-size: 40px;
+  }
+
+.timer div {
+    display: inline-block;
+    font-size: 40px;
+    width: 50px;
+}
