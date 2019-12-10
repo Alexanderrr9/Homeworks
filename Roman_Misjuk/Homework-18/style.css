@@ -1,0 +1,63 @@
+.container, .info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+.minutes, .seconds, .milliseconds {
+	border: 2px solid black;
+	border-radius: 10px;
+	margin: 5px;
+	padding: 20px;
+	font: 500 30px Helvetica sans-serif;
+}
+.btn-wrapper {
+	margin: 10px;
+}
+button {
+	width: 100px;
+	height: 30px;
+	font-size: 18px;
+	margin: 10px 10px;
+	background: #4e4e4e;
+	color: #ffffff;
+	outline: none;
+	border: none;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-shadow: 0 3px 4px rgba(0,0,0,0.8);
+}
+button:hover {
+	cursor: pointer;
+	color: #4e4e4e;
+	border: 1px solid #4e4e4e;
+	background: #ffffff;
+	box-shadow: 0 0 0 rgba(0,0,0,0.8);
+	transition: 0.2s;
+}
+ol	{
+	padding: 0;
+	list-style-type: none;
+	counter-reset: item;
+}
+li {
+	color: #4e4e4e;
+	font-size: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #969696;
+}
+li::before {
+	content: counter(item) ') ';
+	counter-increment: item;
+}
+.hide {
+	display: none;
+}
+
+
