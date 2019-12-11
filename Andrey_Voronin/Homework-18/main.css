@@ -1,0 +1,36 @@
+body {
+    padding-top: 10px;
+}
+
+body div {
+    width: 250px;
+    margin: 10px auto;
+    text-align: center;
+    font-size: 35px;
+}
+
+button {
+    width: 150px;
+    border: 2px solid dodgerblue;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.watch {
+    margin: 20px auto;
+}
+
+.watch div {
+    display: inline;
+    font-size: inherit;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.saves {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
