@@ -1,0 +1,31 @@
+body {
+    display: grid;
+    grid-auto-flow: row;
+    align-items: center;
+    justify-items: center;
+    row-gap: 20px;
+}
+.display div {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 40px;
+    width: 60px;
+    display: grid;
+    justify-items: center;
+}
+
+.display {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-items: center;
+    column-gap: 20px;
+}
+button {
+    font-size: 20px;
+    padding: 10px;
+}
+.none {
+    display: none;
+}
