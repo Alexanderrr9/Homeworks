@@ -22,22 +22,22 @@ function startPause() {
 
 var start = document.getElementById('start');
 
-function reset(){
+function reset() {
     running = 0;
     time = -1;
     start.dataset.about = 'start';
     start.innerText = 'Start';
-    document.getElementById("output").innerHTML = '<span>00</span><span>00</span><span>00</span>';
-    document.getElementById('reset').classList.add("hidden");
-    document.getElementById('save').classList.add("hidden");
+    document.getElementById('output').innerHTML = '<span>00</span><span>00</span><span>00</span>';
+    document.getElementById('reset').classList.add('hidden');
+    document.getElementById('save').classList.add('hidden');
     deleteDiv();
 }
 
 function showResetSave() {
-    document.getElementById('reset').classList.remove("hidden");
-    document.getElementById('save').classList.remove("hidden");
-    document.getElementById('reset').classList.add("show");
-    document.getElementById('save').classList.add("show");
+    document.getElementById('reset').classList.remove('hidden');
+    document.getElementById('save').classList.remove('hidden');
+    document.getElementById('reset').classList.add('show');
+    document.getElementById('save').classList.add('show');
 }
 
 var mins,
@@ -45,35 +45,34 @@ var mins,
     tenths,
     idDiv = document.getElementById('setTagP');
 
-function increment(){
+function increment() {
 
-    if(running === 1){
-        var stopSetTimeout = setTimeout(function(){
+    if(running === 1) {
+        var stopSetTimeout = setTimeout(function() {
 
             time++;
             this.mins = Math.floor(time/10/60);
             this.secs = Math.floor(time/10 % 60);
             this.tenths = time % 100;
 
-            if(mins < 10){
-                this.mins = "0" + mins;
+            if(mins < 10) {
+                this.mins = '0' + mins;
             }
-            if(secs < 10){
-                secs = "0" + secs;
+            if(secs < 10) {
+                secs = '0' + secs;
             }
-            if(tenths < 10){
-                tenths = "0" + tenths;
+            if(tenths < 10) {
+                tenths = '0' + tenths;
             }
 
-            document.getElementById("output").innerHTML = '<span>'+mins+'</span><span>'+secs+'</span><span>'+tenths+'</span>';
+            document.getElementById('output').innerHTML = '<span>'+mins+'</span><span>'+secs+'</span><span>'+tenths+'</span>';
             increment();
-        },100);
+        },99);
 
         if (mins == 60) {
-            document.getElementById("startPause").classList.add("hidden");
-            document.getElementById("save").classList.add("hidden");
+            document.getElementById('start').classList.add('hidden');
+            document.getElementById('reset').classList.add('hidden');
             clearTimeout(stopSetTimeout);
-            startPause();
         }
     }
 }
