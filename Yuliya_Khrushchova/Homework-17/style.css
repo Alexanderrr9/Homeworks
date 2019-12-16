@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body{
+    width: 100%;
+    min-width: 250px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    border: 1px solid lightslategray;
+    border-radius: 20px;
+    background-color: transparent;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+button,
+button:active,
+button:focus {
+    outline: none;
+}
+.reset_button, .save_button{
+    width: 120px;
+    height: 25px;
+    font-size: 14px;
+}
+.save_button{
+    background-color: lightblue;
+}
+
+time{
+    width: 40px;
+    height: 40px;
+    border: 2px solid lightslategrey;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+span,time{
+    display: inline-block;
+    font-size: 35px;
+}
+div{
+    margin: 0 auto;
+    flex-direction: column;
+}
+.timer{
+    margin:10px auto;
+}
+.hidden{
+    display: none;
+}
+.primary_buttons, .timer{
+    height: 60px;
+}
+.secondary_buttons{
+    display: flex;
+    height: 100px;
+}
+p.saved_records-container{
+    width: 230px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+button[data-status="start"]{
+    background-color: #53dd4b9e;
+}
+button[data-status="stop"]{
+    background-color: #e31c1c61;
+}
+button[data-status="run"]{
+    background-color: #76dd4d8a;
+}
