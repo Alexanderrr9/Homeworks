@@ -15,14 +15,33 @@ var timerIdGlobal;
 
 var i = 1; // счетчик сохраненных таймеров
 
+
+window.onload = function () {
+    var localMSMS = localStorage.getItem('msms');
+    var localSS = localStorage.getItem('ss');
+    var localMM = localStorage.getItem('mm');
+    var localBtnState = localStorage.getItem('startBtnState');
+    if ((localMSMS && localMSMS !== '0') && (localSS && localSS !== '0')) {
+        msms = +localMSMS;
+        ss = +localSS;
+        mm = +localMM;
+        console.log(localBtnState);
+        startBtn.dataset.state = localBtnState;
+        timeMsMs.innerText = convertTime(msms);
+        timeSs.innerText = convertTime(ss);
+        timeMm.innerText = convertTime(mm);
+        optionBtn.hidden = false;
+        startMSMS()
+    }
+};
+
+
 function startMSMS() {
     stateStartBtn = startBtn.dataset.state;
-    if (stateStartBtn === 'start' && mm === 60) {
-        clearTime()
-    }
     if (stateStartBtn === 'start') {
         startBtn.innerText = 'Приостановить';
         startBtn.dataset.state = 'stop';
+        optionBtn.children[0].hidden = false;
         optionBtn.hidden = false;
         var timerID = setInterval(function () {
             increaseMSMS()
@@ -62,7 +81,10 @@ function increaseMM() {
     if (mm === 60) {
         clearInterval(timerIdGlobal);
         timeMsMs.innerText = '00';
-        startBtn.dataset.state = 'start'
+        startBtn.dataset.state = 'start';
+        optionBtn.children[0].hidden = true;
+        document.getElementsByClassName('controlButton')[0].classList.add('btnHide')
+
     }
 }
 
@@ -83,12 +105,26 @@ function clearTime() {
     timeMm.innerText = '00';
     startBtn.innerText = 'Запустить';
     startBtn.dataset.state = 'start';
+    document.getElementsByClassName('controlButton')[0].classList.remove('btnHide')
     optionBtn.hidden = true;
-    savedTimers.innerHTML =''
+    savedTimers.innerHTML = ''
 
 }
 
 function saveTimer() {
-    savedTimers.insertAdjacentHTML("beforeend", '<p>' + i + '. ' + convertTime(mm) + ' ' + ' ' +  convertTime(ss) + ' ' +  convertTime(msms) + '</p>')
+    savedTimers.insertAdjacentHTML("beforeend", '<p>' + i + '. ' + convertTime(mm) + ' ' + ' ' + convertTime(ss) + ' ' + convertTime(msms) + '</p>')
     i++
 }
+
+window.addEventListener("unload", function () {
+    localStorage.setItem('msms', msms);
+    localStorage.setItem('ss', ss);
+    localStorage.setItem('mm', mm);
+    if (startBtn.dataset.state === 'start') {
+        localStorage.setItem('startBtnState', 'stop')
+    } else if (startBtn.dataset.state === 'stop') {
+        localStorage.setItem('startBtnState', 'start')
+    }
+
+
+});
